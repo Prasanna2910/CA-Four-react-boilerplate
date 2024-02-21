@@ -20,6 +20,8 @@ function App() {
 
   const [themeName, setThemeName] = useState('light');
 
+  const [green, setred] = useState(true);
+
   // creating a skip funnction to make the page go to next question
   function skip() {
     if (state === 4) {
@@ -77,7 +79,9 @@ function App() {
       </div>
 
       <div className="QuestionDiv">
-        <p className="questionTEXT">{questions[state].text}</p>
+        <p className={green ? 'questionTEXT' : 'high'}>
+          {questions[state].text}
+        </p>
       </div>
 
       {/* adding the button inside the div and adding the functionality to it  */}
@@ -99,13 +103,28 @@ function App() {
         </button>
       </div>
 
-      {/* adding a button skip if the user want to skip the particular question */}
-      <div>
+      <div className="flex">
+        <button
+          onClick={() => {
+            setred(false);
+          }}
+          className="Highlight"
+        >
+          Highlight
+        </button>
+        <button
+          onClick={() => {
+            setred(true);
+          }}
+          className="RemoveHighlight"
+        >
+          Remove Highlight
+        </button>
+        {/* adding a button skip if the user want to skip the particular question */}
         <button className="skip" onClick={skip}>
           Skip
         </button>
       </div>
-
       {/* linking the modal to the page */}
       <div>{openModal && <Modal />}</div>
     </div>
