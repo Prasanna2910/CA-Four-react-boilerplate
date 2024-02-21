@@ -1,12 +1,15 @@
+// Importing all the requirements form different places
 import React, { useEffect, useMemo, useState } from 'react';
 
 import './App.css';
 
 import questions from './questions';
-import Modal from './Modal';
-// import Modal from './Modal';
 
+import Modal from './Modal';
+
+// creating a function App
 function App() {
+  // using useStat hook for functionality for score,theme,state,modal
   const [state, setstate] = useState(0);
 
   const [openModal, setOpenModal] = useState(false);
@@ -17,6 +20,7 @@ function App() {
 
   const [themeName, setThemeName] = useState('light');
 
+  // creating a skip funnction to make the page go to next question
   function skip() {
     if (state === 4) {
       setOpenModal(true);
@@ -25,6 +29,7 @@ function App() {
     }
   }
 
+  // creating a scoretable function to specify a functionality to say to go to next question and the condition for it
   function scoretable(e) {
     if (state < questions.length) {
       if (questions[state].options[e].isCorrect === true) {
@@ -36,6 +41,7 @@ function App() {
     }
   }
 
+  // using the specified hook(useEffect) to chaannage the theme according to conndition provided
   useEffect(() => {
     if (light) {
       setThemeName('light');
@@ -44,6 +50,7 @@ function App() {
     }
   }, [light]);
 
+  // specifying the background image change according to the change in the theme
   const handleClick = () => {
     if (light) {
       document.body.style.backgroundImage =
@@ -55,18 +62,15 @@ function App() {
     setTheme(!light);
   };
 
-  const themeMode = useMemo(() => {
-    return {
-      backgroundColor: light ? 'white' : '#ffffff',
-    };
-  }, [light]);
-
+  // using local storage to get the score into local storage
   localStorage.setItem('score', score);
 
   return (
+    // specifing all the HTML requirments and tags such as div, h2,etc
     <div>
+      <h2 className="title">Do React ! !</h2>
       <div className="questionNumberAndToggle">
-        {state + 1} out of 5
+        <p className="OneOutOfNum">{state + 1} out of 5</p>
         <button onClick={handleClick} className="ToggleBTN">
           {themeName}
         </button>
@@ -76,6 +80,7 @@ function App() {
         <p className="questionTEXT">{questions[state].text}</p>
       </div>
 
+      {/* adding the button inside the div and adding the functionality to it  */}
       <div className="ButtonsDiv">
         <button className="btn1" onClick={() => scoretable(0)}>
           {questions[state].options[0].text}
@@ -94,15 +99,18 @@ function App() {
         </button>
       </div>
 
+      {/* adding a button skip if the user want to skip the particular question */}
       <div>
         <button className="skip" onClick={skip}>
           Skip
         </button>
       </div>
 
+      {/* linking the modal to the page */}
       <div>{openModal && <Modal />}</div>
     </div>
   );
 }
 
+// exportring the app component
 export default App;
