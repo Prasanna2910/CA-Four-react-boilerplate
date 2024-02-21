@@ -13,12 +13,12 @@ function Modal() {
           <h2>Game Over</h2>
         </div>
         <div className="body">
-          <p>Your score is:</p>
+          <p>Your score is:{localStorage.getItem('score')}</p>
         </div>
 
         <div className="footer">
           <Link to="/">
-            <button onClick={() => window.location.reload()}>Go Back</button>
+            <button onClick={() => window.location.reload()} className='GoBAck'>Go Back</button>
           </Link>
         </div>
       </div>

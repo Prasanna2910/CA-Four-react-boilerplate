@@ -4,13 +4,8 @@
   font-family: cursive;
 }
 body {
-  /* background: rgb(111, 224, 222);
-  background: linear-gradient(
-    20deg,
-    rgba(111, 224, 222, 1) 0%,
-    rgba(13, 206, 245, 1)  74%
-  ); */
   background-image: url('https://musallamuttaqin3k.files.wordpress.com/2017/11/abstract-art-colorful-colors-design-illustration-light-theme-wallpaper-17.jpg');
+  /* background-color: honeydew; */
 }
 .QuestionDiv {
   /* border: 1px solid black; */
@@ -26,11 +21,11 @@ body {
   text-align: center;
   filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));
 }
-.ques {
-  margin-top: 4%;
+.questionTEXT {
+  margin-top: 7%;
 }
 .ButtonsDiv {
-  /* border: 1px solid black; */
+  margin-top: 40px;
   display: grid;
   gap: 40px;
   grid-template-columns: 1fr 1fr;
@@ -84,4 +79,89 @@ body {
   background-color: green;
   color: white;
   margin-left: 47%;
+  margin-top: 45px;
+}
+.questionNumberAndToggle {
+  margin-top: 5px;
+  margin-left: 5%;
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  color: rgb(0, 0, 0);
+}
+.ToggleBTN {
+  padding: 5px;
+  width: 60px;
+}
+@media screen and (min-width: 320px) and (max-width: 600px) {
+  .QuestionDiv {
+    /* border: 1px solid black; */
+    /* margin-top: 20px; */
+    width: 230px;
+    height: 80px;
+    position: absolute;
+    top: 50px;
+    left: 15%;
+    background-color: white;
+    color: #1f6afd;
+    font-weight: bold;
+    font-size: 17px;
+    text-align: center;
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5));
+  }
+  .ButtonsDiv {
+    /* border: 1px solid black; */
+    display: flex;
+    flex-direction: column;
+    height: 55%;
+    margin-left: 22%;
+    margin-top: 40px;
+  }
+  .btn1,
+  .btn2,
+  .btn3,
+  .btn4 {
+    font-weight: bolder;
+    font-size: 11px;
+    width: 180px;
+    height: 60px;
+    box-shadow: 0px 0px 7px #000;
+    --bg: #ffffff;
+    --hover-bg: #990066;
+    --hover-text: #fff;
+    color: #1f6afd;
+    cursor: pointer;
+    border: 1px solid var(--bg);
+    border-radius: 4px;
+    padding: 0.8em 2em;
+    background: var(--bg);
+    transition: 0.2s;
+  }
+  .btn1:hover,
+  .btn2:hover,
+  .btn3:hover,
+  .btn4:hover {
+    color: var(--hover-text);
+    transform: translate(-0.25rem, -0.25rem);
+    background: var(--hover-bg);
+    box-shadow: 0.25rem 0.25rem var(--bg);
+  }
+  .btn1:active,
+  .btn2:active,
+  .btn3:active,
+  .btn4:active {
+    transform: translate(0);
+    box-shadow: none;
+  }
+  .skip {
+    /* border: 1px solid black; */
+    position: absolute;
+    top: 500px;
+    width: 70px;
+    height: 30px;
+    background-color: rgb(0, 158, 0);
+    color: white;
+    margin-left: 40%;
+    margin-top: 45px;
+  }
 }
