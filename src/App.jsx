@@ -71,6 +71,11 @@ function App() {
     // specifing all the HTML requirments and tags such as div, h2,etc
     <div>
       <h2 className="title">Do React ! !</h2>
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png"
+        alt=""
+        className='reactIMg'
+      />
       <div className="questionNumberAndToggle">
         <p className="OneOutOfNum">{state + 1} out of 5</p>
         <button onClick={handleClick} className="ToggleBTN">
