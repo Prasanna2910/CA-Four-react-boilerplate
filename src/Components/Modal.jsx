@@ -4,7 +4,7 @@ import React from 'react';
 import './Modal.css';
 
 import { Link, Route, Routes } from 'react-router-dom';
-import App from './App';
+import App from '../App';
 
 // creating  a function called Modal to create modal
 function Modal() {

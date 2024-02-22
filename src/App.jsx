@@ -5,7 +5,7 @@ import './App.css';
 
 import questions from './questions';
 
-import Modal from './Modal';
+import Modal from './Components/Modal';
 
 // creating a function App
 function App() {
@@ -74,7 +74,7 @@ function App() {
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png"
         alt=""
-        className='reactIMg'
+        className="reactIMg"
       />
       <div className="questionNumberAndToggle">
         <p className="OneOutOfNum">{state + 1} out of 5</p>
